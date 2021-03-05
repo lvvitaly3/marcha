@@ -38,9 +38,13 @@ private:
 		while (!is_exit) {
 			TestDatasMes* ptmes = new TestDatasMes;
 			ptmes->idx = getIdx();
-			RingQueues::put(ptmes, pos);
-			g_cv.notify_one();
-			Sleep(1);
+			while (true) {
+				if (RingQueues::put(ptmes, pos)) {
+//					g_cv.notify_one();
+					break;
+				}
+				Sleep(1);
+			}//EndWhile
 		}
 	}
 };

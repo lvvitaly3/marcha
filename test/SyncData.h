@@ -54,13 +54,16 @@ private:
 			}//EndFor
 			if (nthr > -1) {
 			    idx = min_idx;
-				printf("------------------->%u\n", (unsigned)idx);
+//				printf("------------------->%u\n", (unsigned)idx);
 		    }
 			else {
-				std::unique_lock<std::mutex> lk(mtx_);
-				g_cv.wait(lk);
+//				std::unique_lock<std::mutex> lk(mtx_);
+//				g_cv.wait(lk);
+//				Sleep(1);
 			}
 		}
+		printf("------------------->%u\n", (unsigned)idx);
+
 	}
 	std::mutex mtx_;
 	uint64_t idx;

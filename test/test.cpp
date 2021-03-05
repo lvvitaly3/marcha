@@ -35,10 +35,7 @@ int main()
 	try {
 		sync sync_;
 
-		time_t tm = time(NULL);
-		while (time(NULL) - tm < 100) {
-			Sleep(1000);
-		}
+		Sleep(1000*10);
 	}
 	catch (...) {
 		std::cout << "Error sync \n";
@@ -57,12 +54,8 @@ int main()
 		PrepareData  prepareData;
 		Sleep(5);
 		SyncData  syncData;
-          
-		time_t tm = time(NULL);
-		while (time(NULL) - tm < 100) {
-			Sleep(1000);
-		}
 
+		Sleep(1000*10);
 	}
 	catch (...) {
 		std::cout << "Error PrepareData \n";

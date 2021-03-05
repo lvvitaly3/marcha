@@ -10,8 +10,7 @@
 #include <windows.h>
 
 #define _MAXLEN_PACKET_DATA_  1024
-#define _MAXNUM_THREADS_      10
-
+#define _MAXNUM_THREADS_      2
 extern std::condition_variable g_cv;
 
 typedef struct TestDatasMes {

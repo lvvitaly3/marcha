@@ -37,17 +37,18 @@ private:
 		return main_idx++;
 	}
 	void fncThread(int32_t pos) {
+		uint32_t idx;
 		while (!is_exit) {
-			uint32_t idx = getIdx();
+			idx = getIdx();
 			while (!is_exit) {
 				if (idx == 0 && calc_idx == 0xffffffff) {
 					calc_idx = idx;
-					std::cout << "--------------->" << idx << "\n";
+//					std::cout << "--------------->" << idx << "\n";
 					break;
 				}
 				else {
 					if ((calc_idx & 0x0ffffffff) + 1 == idx) {
-						std::cout << "--------------->" << idx << "\n";
+//						std::cout << "--------------->" << idx << "\n";
 						calc_idx = idx;
 						break;
 					}
@@ -70,6 +71,8 @@ private:
 				}
 			}
 		}
+		std::cout << "--------------->" << idx << "\n";
+
 	}
 };
 
